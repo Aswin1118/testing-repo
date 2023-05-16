@@ -7,7 +7,7 @@ pipeline {
         
         stage('Clone') {
             steps {
-                dir("/home/ubuntu/workspace/test/testing-repo/"){
+                dir("/home/ubuntu/workspace/test/petclinic/"){
                 git branch: 'main', url: 'https://github.com/spring-projects/spring-petclinic.git'
             }
             }
@@ -15,7 +15,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                dir("/home/ubuntu/workspace/test/testing-repo/petclinic/") {
+                dir("/home/ubuntu/workspace/test/petclinic/") {
                     sh 'mvn test'
                 }
             }
