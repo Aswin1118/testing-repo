@@ -4,6 +4,15 @@ pipeline {
     }
 
     stages {
+        
+        stage('Clone') {
+            steps {
+                dir("/home/ubuntu/workspace/test/testing-repo/"){
+                git 'https://github.com/spring-projects/spring-petclinic.git'
+            }
+            }
+        }
+
         stage('Test') {
             steps {
                 dir("/home/ubuntu/workspace/test/testing-repo/petclinic/") {
