@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                dir("/home/ubuntu/workspace/test//testing-repo/petclinic/") {
+                dir("/home/ubuntu/workspace/test/testing-repo/petclinic/") {
                     sh 'mvn test'
                 }
             }
