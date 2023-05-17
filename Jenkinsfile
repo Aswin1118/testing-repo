@@ -15,8 +15,10 @@ pipeline {
 
         stage('Test') {
             steps {
-                dir("/home/ubuntu/workspace/test/petclinic/") {
-                    sh 'mvn test'
+                timeout(time: 15, unit: 'MINUTES') {
+                    dir("/home/ubuntu/workspace/test/petclinic/") {
+                        sh 'mvn test'
+                    }
                 }
             }
             post {
