@@ -17,7 +17,7 @@ pipeline {
             steps {
                 timeout(time: 15, unit: 'MINUTES') {
                     dir("/home/ubuntu/workspace/test/petclinic/") {
-                        sh 'mvn test'
+                        sh 'mvn -Dmaven.surefire.debug test'
                     }
                 }
             }
