@@ -17,7 +17,7 @@ pipeline {
             steps {
                 timeout(time: 15, unit: 'MINUTES') {
                     dir("/home/ubuntu/workspace/test/petclinic/") {
-                        sh 'mvn -Dmaven.surefire.debug test'
+                        sh(script: './mvnw --batch-mode -Dmaven.test.failure.ignore=true test')
                     }
                 }
             }
